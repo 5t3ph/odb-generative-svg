@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generative SVG with On-Demand Builders</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        padding: 5vh clamp(1rem, 5vw, 3rem) 1rem;
+        font-family: system-ui, sans-serif;
+        line-height: 1.5;
+        color: #222;
+      }
+
+      body > * {
+        --layout-spacing: max(8vh, 3rem);
+        --max-width: 70ch;
+        width: min(100%, var(--max-width));
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      header p {
+        font-size: 1.5rem;
+        margin-top: 4vh;
+      }
+
+      main {
+        margin-top: var(--layout-spacing);
+      }
+
+      img {
+        display: block;
+        margin: 4vh auto 0;
+        max-width: 100%;
+        height: auto;
+      }
+
+      .callout {
+        font-size: 1.25rem;
+        text-align: center;
+        padding: 4vmin 8vmin;
+        margin-top: 8vh;
+        border: 5px solid;
+        border-image: linear-gradient(
+            35deg,
+            hsl(260, 95%, 65%),
+            hsl(320, 95%, 65%)
+          )
+          1;
+      }
+
+      footer {
+        margin-top: auto;
+        padding-top: var(--layout-spacing);
+      }
+
+      footer p {
+        border-top: 1px solid #ccc;
+        padding-top: 0.25em;
+        font-size: 0.9rem;
+        color: #767676;
+      }
+
+      :is(h1, h2, h3) {
+        line-height: 1.2;
+      }
+
+      :is(h2, h3):not(:first-child) {
+        margin-top: 2em;
+      }
+
+      main * + * {
+        margin-top: 1em;
+      }
+
+      a {
+        color: navy;
+        text-underline-offset: 0.15em;
+      }
+
+      code {
+        font-family: Consolas, monospace;
+        font-size: 0.95em;
+        color: hsl(260, 95%, 65%);
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Generative SVG with On-Demand Builders</h1>
+      <p>
+        A demonstration of returning a generative art SVG via
+        <a href="https://docs.netlify.com/configure-builds/on-demand-builders/"
+          >Netlify On-Demand Builders</a
+        >
+      </p>
+    </header>
+    <main>
+      <h2>How to Use</h2>
+      <p>
+        Add any "seed" string after a slash on this site -
+        <code>/seed-word/</code> - to receive a generative art image! Due to how
+        on-demand builders (ODB) work, each "seed" word will create an image
+        that persists until the site build cache clears.
+      </p>
+      <p>
+        The default size is a <code>200px</code> square. You can change the size
+        by adding <code>/seed-word/width/height/</code>, optionally with only a
+        <code>width</code>.
+      </p>
+      <img src="/default/" alt="default example" width="200" height="200" />
+      <img
+        src="/custom-width/600"
+        alt="custom width example"
+        width="600"
+        height="200"
+      />
+      <img
+        src="/custom-dimensions/400/75"
+        alt="custom dimensions example"
+        width="400"
+        height="75"
+      />
+
+      <p class="callout">
+        Be sure to
+        <a href="https://github.com/5t3ph/odb-generative-svg"
+          >⭐️ Star on GitHub</a
+        >, and take it and improve it for your own projects!
+      </p>
+
+      <h2>Credits</h2>
+      <p>
+        Cowboy hat tip to
+        <a href="https://twitter.com/trostcodes">Alex Trost</a> for suggesting
+        the idea of using ODB in this way.
+      </p>
+      <p>
+        The biggest kudos to
+        <a href="https://twitter.com/georgedoescode">George Francis</a>, master
+        of generative art, for being an inspiration and leading me to the right
+        tools thanks to
+        <a href="https://www.twitch.tv/videos/1108976288"
+          >their demonstration on Frontend Horse</a
+        >
+        with Alex!
+      </p>
+    </main>
+    <footer>
+      <p>Created by <a href="https://twitter.com/5t3ph">Stephanie Eckles</a></p>
+    </footer>
+  </body>
+</html>

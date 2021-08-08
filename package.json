@@ -1,0 +1,22 @@
+{
+  "name": "odb-generative-svg",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/5t3ph/odb-generative-svg.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/5t3ph/odb-generative-svg/issues"
+  },
+  "homepage": "https://github.com/5t3ph/odb-generative-svg#readme",
+  "dependencies": {
+    "@netlify/functions": "^0.7.2",
+    "@svgdotjs/svg.js": "^3.1.1",
+    "svgdom": "^0.1.8"
+  }
+}

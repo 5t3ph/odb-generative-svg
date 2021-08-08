@@ -1,0 +1,23 @@
+# example netlify.toml
+[build]
+  command = "# no build command"
+  functions = "functions"
+  publish = "."
+
+  [[redirects]]
+    from = "/:seed"
+    to = "/.netlify/functions/svg/"
+    status = 200
+    force = true
+
+  [[redirects]]
+    from = "/:seed/:width"
+    to = "/.netlify/functions/svg/"
+    status = 200
+    force = true
+
+  [[redirects]]
+    from = "/:seed/:width/:height"
+    to = "/.netlify/functions/svg/"
+    status = 200
+    force = true
